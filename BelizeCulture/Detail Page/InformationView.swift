@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class InformationView: BasicView {
     let textBrownColor = UIColor.rgb(red: 132, green: 94, blue: 85)
     fileprivate var imgName: String?{
@@ -78,5 +80,23 @@ extension InformationView{
         self.title = title
         self.subTitle = subTitle
         self.imgName = imgName
+    }
+    
+    public func fetchWebsite() -> String?{
+        if subTitle != "none"{
+            return subTitle
+        }
+        return nil
+    }
+    
+    public func changeSubtitleFontToItalic(){
+            subTitleLabel.font = UIFont.italicSystemFont(ofSize: 22)
+            subTitleLabel.textColor = UIColor.skyBlue
+    }
+    
+    public func websiteViewIsShowed(){
+        subTitleLabel.font = UIFont.systemFont(ofSize: 22)
+        subTitleLabel.textColor = UIColor.black
+        isUserInteractionEnabled = false
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class CardViewController: UIViewController {
     let slideLeftTransitionAnimator = SlideLeftTransitionAnimator()
-    let places = Place.allPlaces()
+    let places = Place.getPlaces()
     lazy var postShown = [Bool](repeating: false, count: places.count)
     lazy var isAnimatedShown = [Bool](repeating: true, count: places.count)
     //    var postShown = [Bool](repeating: false, count: 10)
@@ -37,10 +37,8 @@ class CardViewController: UIViewController {
     
     lazy var dismissButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("<", for: .normal)
-        
-        btn.setTitleColor(UIColor.white, for: .normal)
-        
+        btn.setImage(UIImage(named: IconsConstant.back.rawValue)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        btn.contentMode = .scaleAspectFit
         btn.addTarget(self, action: #selector(popVC), for: .touchUpInside)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         return btn
@@ -62,7 +60,7 @@ class CardViewController: UIViewController {
         setupCollectionView()
         registerCell()
         setCollectionViewProperty()
-//        setupDismissButton()
+        setupDismissButton()
         collectionView.backgroundColor = .clear
     }
     
@@ -89,7 +87,7 @@ extension CardViewController{
     
     fileprivate func setupDismissButton(){
         view.addSubview(dismissButton)
-        dismissButton.anchor(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, topPadding: 10, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 100, height: 30)
+        dismissButton.anchor(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, topPadding: 0, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 60, height: 60)
     }
 }
 

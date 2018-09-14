@@ -11,14 +11,14 @@
 
 import UIKit
 protocol ChangeSegmentedContolValueProtocol {
-    func changeCurrentValue(isInformation: Bool)
+    func changeCurrentValue(isStory: Bool)
 }
 
 
 
 class SegmentedControlView: BasicView {
     var delegate: ChangeSegmentedContolValueProtocol?
-    var isInformation = true
+    var isStory = true
     
     
     fileprivate var values: [String]?{
@@ -48,11 +48,11 @@ class SegmentedControlView: BasicView {
         }
         
         if segmentedControl.selectedSegmentIndex == 0{
-            isInformation = true
+            isStory = true
         }else{
-            isInformation = false
+            isStory = false
         }
-        delegate?.changeCurrentValue(isInformation: isInformation)
+        delegate?.changeCurrentValue(isStory: isStory)
     }
     
     let buttonBar: UIView = {
@@ -99,7 +99,7 @@ extension SegmentedControlView{
         segmentedControl.tintColor = .clear
         segmentedControl.setTitleTextAttributes([
             NSAttributedString.Key.font :UIFont.boldSystemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor: UIColor.classicBrown
+            NSAttributedString.Key.foregroundColor: UIColor.textBrownColor
             ], for: .normal)
         segmentedControl.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20),
@@ -108,7 +108,7 @@ extension SegmentedControlView{
         
         
         segmentedControl.layer.borderWidth = 1.0
-        segmentedControl.layer.borderColor = UIColor.classicBrown.cgColor
+        segmentedControl.layer.borderColor = UIColor.textBrownColor.cgColor
         segmentedControl.layer.cornerRadius = 3.0
         segmentedControl.clipsToBounds = true
 

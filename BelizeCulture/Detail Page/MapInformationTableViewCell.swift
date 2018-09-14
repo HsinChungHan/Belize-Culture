@@ -22,6 +22,14 @@ class MapInformationTableViewCell: BasicTableViewCell {
         return imv
     }()
     
+    lazy var guideImgView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = UIImage(named: "Guides")
+        imv.contentMode = .scaleAspectFit
+        return imv
+    }()
+    
+    
     var place: Place? {
         didSet{
             guard let place = place else {return}
@@ -46,7 +54,8 @@ class MapInformationTableViewCell: BasicTableViewCell {
     
     override func setupViews() {
         setupMapImgView()
-        setupDetailMapButton()
+        setupGuideImgView()
+//        setupDetailMapButton()
     }
 
 }
@@ -62,5 +71,9 @@ extension MapInformationTableViewCell{
         detailMapButton.anchor(top: topAnchor, bottom: nil, left: nil, right: rightAnchor, topPadding: 20, bottomPadding: 0, leftPadding: 0, rightPadding: 20, width: 40, height: 40)
     }
     
+    fileprivate func setupGuideImgView(){
+        addSubview(guideImgView)
+        guideImgView.anchor(top: topAnchor, bottom: nil, left: nil, right: rightAnchor, topPadding: 20, bottomPadding: 0, leftPadding: 0, rightPadding: 20, width: 100, height: 100)
+    }
 }
 

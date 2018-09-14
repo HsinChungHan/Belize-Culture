@@ -17,8 +17,10 @@ class PopInformationView: BasicView {
         didSet{
             guard let place = place else {return}
             imgs = place.imgs
-            titleLabe.text = place.name
+            titleLabe.text = place.englishName
+            subTitleLabel.text = place.openingTime
             pageView.numberOfPages = imgs.count
+            collectionView.reloadData()
             setupCurrentIndex()
         }
     }
@@ -26,7 +28,7 @@ class PopInformationView: BasicView {
     var senderTag: Int?
     
     var goToDetailVCDelegate: GoToDetailVCDelegate?
-    var imgs = ["test1","test2","test3","test4"]
+    var imgs = [String]()
     let bannerContentCell = "BannerContentCell"
     var currentIndexPath: IndexPath?
     var timer: Timer?
@@ -38,7 +40,7 @@ class PopInformationView: BasicView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
         cv.register(BannerContentCell.self, forCellWithReuseIdentifier: bannerContentCell)
@@ -60,11 +62,9 @@ class PopInformationView: BasicView {
     
     lazy var detailButton: UIButton = {
        let btn = UIButton(type: .system)
-        btn.setTitle(">", for: .normal)
-        btn.titleLabel?.textAlignment = .right
-        btn.setTitleColor(UIColor.backgroundRiceColor, for: .normal)
+        btn.setImage(UIImage(named: "more")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
         btn.addTarget(self, action: #selector(goToDetail), for: .touchUpInside)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         return btn
     }()
     
@@ -72,6 +72,20 @@ class PopInformationView: BasicView {
         let view = UIView()
         view.backgroundColor = UIColor.classicDarkGreen.withAlphaComponent(0.7)
         return view
+    }()
+    
+    let nameImgView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = UIImage(named: "location")
+        imv.contentMode = .scaleAspectFit
+        return imv
+    }()
+    
+    let timeImgView: UIImageView = {
+        let imv = UIImageView()
+        imv.image = UIImage(named: "time")
+        imv.contentMode = .scaleAspectFit
+        return imv
     }()
     
     lazy var titleLabe: UILabel = {
@@ -83,6 +97,17 @@ class PopInformationView: BasicView {
         return label
     }()
     
+
+    
+    lazy var subTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.backgroundRiceColor
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.text = "Mon-Sunday(Open all day)"
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
     
     @objc func goToDetail(){
 //        removeTimer()
@@ -123,9 +148,18 @@ extension PopInformationView{
         pageView.anchor(top: nil, bottom: bottomView.bottomAnchor, left: nil, right: nil, topPadding: 0, bottomPadding: 10, leftPadding: 0, rightPadding: 0, width: 100, height: 40)
         pageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         bottomView.addSubview(detailButton)
-        detailButton.anchor(top: nil, bottom: bottomView.bottomAnchor, left: nil, right: rightAnchor, topPadding: 0, bottomPadding: 30, leftPadding: 0, rightPadding: 5, width: 80, height: 40)
+        detailButton.anchor(top: nil, bottom: bottomView.bottomAnchor, left: nil, right: rightAnchor, topPadding: 0, bottomPadding: 20, leftPadding: 0, rightPadding: -10, width: 120, height: 40)
+        bottomView.addSubview(nameImgView)
+        nameImgView.anchor(top: bottomView.topAnchor, bottom: nil, left: bottomView.leftAnchor, right: nil, topPadding: 10, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 20, height: 20)
+        bottomView.addSubview(timeImgView)
+        timeImgView.anchor(top: nameImgView.bottomAnchor, bottom: bottomView.bottomAnchor, left: nameImgView.leftAnchor, right: nameImgView.rightAnchor, topPadding: 10, bottomPadding: 35, leftPadding: 0, rightPadding: 0, width: 0, height: 20)
+        
         bottomView.addSubview(titleLabe)
-        titleLabe.anchor(top: bottomView.topAnchor, bottom: nil, left: bottomView.leftAnchor, right: nil, topPadding: 20, bottomPadding: 0, leftPadding: 20, rightPadding: 0, width: 200, height: 30)
+        
+        titleLabe.anchor(top: nameImgView.topAnchor, bottom: nil, left: nameImgView.rightAnchor, right: bottomView.rightAnchor, topPadding: -5, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 0, height: 30)
+        bottomView.addSubview(subTitleLabel)
+        subTitleLabel.anchor(top: timeImgView.topAnchor, bottom: nil, left: titleLabe.leftAnchor, right: titleLabe.rightAnchor, topPadding: 0, bottomPadding: 0, leftPadding: 0, rightPadding: 0, width: 0, height: 30)
+        
         
 //        let bottomViewLayer = CAGradientLayer()
 //        bottomViewLayer.setGradientLayer(view: bottomView, colors: [UIColor.classicDarkGreen.withAlphaComponent(0.8), UIColor.lightGray.withAlphaComponent(0.5)])
@@ -138,7 +172,7 @@ extension PopInformationView{
     
     func addTimer() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { [weak self](_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { [weak self](_) in
             guard let currentIndexPath = self?.currentIndexPath else {return}
             self?.showImage(isNext: true, indexPath: currentIndexPath)
         })

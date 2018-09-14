@@ -13,7 +13,7 @@ extension UIViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: img), style: .plain, target: self, action: selector)
     }
     func setupLeftNavigationItemByImage(img: String, selector: Selector) {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: img), style: .plain, target: self, action: selector)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: img)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: selector)
     }
     func setupRightNavigationItemByTitle(title: String, selector: Selector) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: selector)

@@ -90,9 +90,30 @@ extension UIView{
         }
     }
     
+    func moveAnimation(dy: CGFloat?, completion: @escaping ()->()) {
+        let moveTransform = CGAffineTransform(translationX: 0, y: dy!)
+        UIView.animate(withDuration: 3.0, delay: 1.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.8, options: [.repeat, .curveEaseInOut], animations: {[weak self] in
+            self?.transform = moveTransform
+            
+        }) { (_) in
+            completion()
+        }
+    }
+    
+    
+    
     func moveAnimation(endView: UIView, duration: Double, completion: @escaping ()->()) {
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {[weak self] in
             let endPoint = CGPoint(x: endView.frame.origin.x - 40 , y: endView.frame.origin.y)
+            self?.frame.origin = endPoint
+        }) { (_) in
+            completion()
+        }
+    }
+    
+    func moveCenterAnimation(endView: UIView, duration: Double, completion: @escaping ()->()) {
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {[weak self] in
+            let endPoint = CGPoint(x: endView.center.x , y: endView.center.y)
             self?.frame.origin = endPoint
         }) { (_) in
             completion()
@@ -107,6 +128,9 @@ extension UIView{
             completion()
         }
     }
+    
+    
+    
     
     
     

@@ -12,7 +12,7 @@ class BannerContentCell: BasicCell {
     
     let titlelabel: UILabel = {
         let label = UILabel()
-        label.text = "瀏覽嚴選商品"
+        label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont(name: "PingFangTC-Medium", size: 20)
@@ -24,7 +24,6 @@ class BannerContentCell: BasicCell {
     
     let imageView: UIImageView = {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "test1")
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
         return imgView

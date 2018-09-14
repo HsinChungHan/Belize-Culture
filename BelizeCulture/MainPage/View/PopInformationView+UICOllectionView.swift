@@ -46,7 +46,8 @@ extension PopInformationView: UIScrollViewDelegate{
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        addTimer()
+        //若取消addTimer，代表使用者滑動後，就不再有輪播功能
+//        addTimer()
         guard let currentIndexPath = currentIndexPath else {return}
         if scrollView.contentOffset.x < oldOffset{
             showImage(isNext: false, indexPath: currentIndexPath)

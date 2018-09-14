@@ -21,11 +21,11 @@ class MapViewController: UIViewController {
     
     lazy var dismissButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("<", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
         btn.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-//        btn.setImage(UIImage(named: "")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        btn.setImage(UIImage(named: IconsConstant.back.rawValue)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.contentMode = .scaleAspectFit
+        btn.tintColor = UIColor.black
         return btn
     }()
    
@@ -36,13 +36,13 @@ class MapViewController: UIViewController {
     lazy var userLocationButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.addTarget(self, action: #selector(showUserLocation), for: .touchUpInside)
-        btn.setImage(UIImage(named: "ninja")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        btn.setImage(UIImage(named: "Guides")?.withRenderingMode(.alwaysOriginal), for: .normal)
         return btn
     }()
     
     @objc func showUserLocation(){
         let userLocation = mapView.userLocation
-        let visibleRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 200000, longitudinalMeters: 200000)
+        let visibleRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 1500, longitudinalMeters: 1500)
         self.mapView.setRegion(self.mapView.regionThatFits(visibleRegion), animated: true)
         
     }
@@ -78,7 +78,7 @@ class MapViewController: UIViewController {
 extension MapViewController{
     fileprivate func setupDismissButton(){
         view.addSubview(dismissButton)
-        dismissButton.anchor(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, topPadding: 10, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 40, height: 40)
+        dismissButton.anchor(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, topPadding: 0, bottomPadding: 0, leftPadding: 10, rightPadding: 0, width: 60, height: 60)
     }
     
     fileprivate func setupMapView(){
@@ -114,22 +114,10 @@ extension MapViewController{
         var placemark: CLPlacemark?
         let geoCoder = CLGeocoder()
         //要改寫成直接用座標去抓，因為貝里斯無法用地址轉座標
-        //        let latitude: CLLocationDegrees = 123.55
-        //        let longtitude: CLLocationDegrees = 34
-        //        let location = CLLocation(latitude: latitude, longitude: longtitude)
-        //        geoCoder.reverseGeocodeLocation(location, preferredLocale: nil) { (placemarks, error) in
-        //            if let error = error{
-        //                print(error)
-        //            }
-        //            if let placemarks = placemarks{
-        //                placemark = placemarks[0]
-        //            }
-        //            completionHandler(placemark)
-        //        }
-        
-        
-        
-        geoCoder.geocodeAddressString(place.location) { (placemarks, error) in
+        let latitude: CLLocationDegrees = CLLocationDegrees(place.coordinate.latitude)
+        let longtitude: CLLocationDegrees = CLLocationDegrees(place.coordinate.longitude)
+        let location = CLLocation(latitude: latitude, longitude: longtitude)
+        geoCoder.reverseGeocodeLocation(location, preferredLocale: nil) { (placemarks, error) in
             if let error = error{
                 print(error)
             }
@@ -138,11 +126,23 @@ extension MapViewController{
             }
             completionHandler(placemark)
         }
+        
+        
+        
+//        geoCoder.geocodeAddressString(place.address) { (placemarks, error) in
+//            if let error = error{
+//                print(error)
+//            }
+//            if let placemarks = placemarks{
+//                placemark = placemarks[0]
+//            }
+//            completionHandler(placemark)
+//        }
     }
     
     fileprivate func addAnnotation(place: Place, placemark: CLPlacemark) -> MKPointAnnotation?{
         let annotation = MKPointAnnotation()
-        annotation.title = place.name
+        annotation.title = place.englishName
         annotation.subtitle = place.type
         if let location = placemark.location{
             annotation.coordinate = location.coordinate
@@ -156,8 +156,11 @@ extension MapViewController{
 //        let visibleRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 10, longitudinalMeters: 10)
 //        self.mapView.setRegion(self.mapView.regionThatFits(visibleRegion), animated: true)
         
+        
+//        let visibleRegion = MKCoordinateRegion(center: selectedAnnotation.coordinate, latitudinalMeters: 1000000, longitudinalMeters: 1000000)
+//        mapView.setRegion(visibleRegion, animated: true)
         mapView.showAnnotations(annotations, animated: true)
-                mapView.selectAnnotation(selectedAnnotation, animated: true)
+//        mapView.selectAnnotation(selectedAnnotation, animated: true)
     }
     
     public func setupValues(place: Place){
@@ -175,7 +178,6 @@ extension MapViewController: MKMapViewDelegate{
         }
         
         var annotationView: MKAnnotationView?
-        
         //use system difault callOut
         
         if #available(iOS 11.0, *){
@@ -188,8 +190,8 @@ extension MapViewController: MKMapViewDelegate{
         
         guard let place = place else {return annotationView}
         
-        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-        leftIconView.image = UIImage(named: place.image)
+        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        leftIconView.image = UIImage(named: place.imgs[0])
         leftIconView.contentMode = .scaleAspectFit
         annotationView?.leftCalloutAccessoryView = leftIconView
         return annotationView
@@ -201,14 +203,13 @@ extension MapViewController: MKMapViewDelegate{
         
         if markerAnnotationView == nil{
             markerAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: pinId)
-            
             markerAnnotationView?.canShowCallout = true
         }
         
         //因為目前的api中，想要在地圖出現title，必須使用MKMarkerAnnotationView
         //客製化的annotation好像無法出現
         //而且目前的api沒有讓glyphImage消失的方法，如果不給圖片，他會有一個difault的icon，所以這邊採用暫時給一個icon，但把它顏色調為clear的方法(用withRenderingMode也無法)
-        markerAnnotationView?.glyphText = "🥙"
+        markerAnnotationView?.glyphText = "🏛"
         markerAnnotationView?.markerTintColor = .orange
         //        markerAnnotationView?.glyphImage = UIImage(named: "mapPin")
         markerAnnotationView?.glyphTintColor = UIColor.red

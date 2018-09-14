@@ -27,9 +27,9 @@ class CardCollectionViewCell: BasicCell {
     var place: Place?{
         didSet{
             guard let place = place else {return}
-            imgView.image = UIImage(named: place.image)
-            titleLabel.text = place.name
-            subtitleLabel.text = place.location
+            imgView.image = UIImage(named: place.imgs[0])
+            titleLabel.text = place.englishName
+            subtitleLabel.text = place.openingTime
             isLiked = place.isLiked
         }
     }
@@ -56,6 +56,7 @@ class CardCollectionViewCell: BasicCell {
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = UIColor.white
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     

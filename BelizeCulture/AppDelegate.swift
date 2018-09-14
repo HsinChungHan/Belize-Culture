@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainVC = MainViewController()
         let detailVC = DetailViewController()
         let cardVC = CardViewController()
-        let naviVC = UINavigationController(rootViewController: mainVC)
+        let welcomeVC = WelcomeViewController()
+        let naviVC = UINavigationController(rootViewController: welcomeVC)
         naviVC.isNavigationBarHidden = true
+        let tabBarVC = MainTabBarController()
         window?.rootViewController = naviVC
+        
+        Thread.sleep(forTimeInterval: 1.5)
+
         return true
     }
 }
+
+
