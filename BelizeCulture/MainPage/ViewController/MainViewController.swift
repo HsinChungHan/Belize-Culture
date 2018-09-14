@@ -40,7 +40,6 @@ class MainViewController: UIViewController {
     }()
     
     @objc func goToCardVC(){
-        
         let cardVC = CardViewController()
         navigationController?.pushViewController(cardVC, animated: true)
     }
@@ -111,72 +110,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    lazy var johnButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.Johns.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        
-        return btn
-    }()
     
-    lazy var hOCButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.HOC.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    lazy var courtButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.Court.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    lazy var parkButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.Park.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    
-    lazy var oldHouseButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.Eusey.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    lazy var belizeSignButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.BelizeSign.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    
-    lazy var bBallButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.BBall.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
-    
-    lazy var plazaButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.tag = PlaceButtonTag.Plaza.rawValue
-        btn.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        btn.imageView?.contentMode = .scaleAspectFit
-        return btn
-    }()
     
     @objc func handleTap(sender: UIButton){
         if currentButton == sender{
@@ -197,11 +131,6 @@ class MainViewController: UIViewController {
         sender.scaleAnimationNoRepeated(scaleX: 1.5, scaleY: 1.5)
         UIView.transition(with: sender, duration: 0.5, options: .transitionFlipFromLeft, animations: nil)
         
-        if sender.tag == PlaceButtonTag.BelizeSign.rawValue{
-            belizeSignDirectionView.removeFromSuperview()
-        }
-        
-        
         if sender.tag == PlaceButtonTag.Johns.rawValue{
             UIView.animate(withDuration: 0.5, animations: {
                 self.directionView.alpha = 0.0
@@ -214,8 +143,6 @@ class MainViewController: UIViewController {
                     })
                 }
             }
-            
-            
         }
         
         if sender.tag == PlaceButtonTag.Johns.rawValue || sender.tag == PlaceButtonTag.HOC.rawValue || sender.tag == PlaceButtonTag.Eusey.rawValue {
@@ -271,16 +198,12 @@ class MainViewController: UIViewController {
         return view
     }()
    
-    //for小英
-    let belizeSignDirectionView = DirectionView()
-    let personCaptionLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupGoToCardButton()
         navigationController?.delegate = self
-        
     }
 }
 
@@ -289,14 +212,9 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController{
-    
-    
-    
     fileprivate func setupViews(){
         setupMap()
-        setupPlaceButtons()
         setupPersonImgView()
-//        setupAllPlacesButtons()
 //        setupWhaleAnimationView()
     }
     
@@ -310,7 +228,7 @@ extension MainViewController{
         personImgView.frame = CGRect(x: UIScreen.main.bounds.width - 100, y: 40, width: 80, height: 80)
     }
     
-    fileprivate func setupAllPlacesButtons(){
+    public func setupAllPlacesButtons(){
         for index in 0 ..< places.count{
             let button = UIButton(type: .system)
             button.tag = index
@@ -325,27 +243,6 @@ extension MainViewController{
             let buttonWidth: CGFloat = 135
             button.frame = CGRect(x: buttonLocation.x , y: buttonLocation.y, width: buttonWidth, height: buttonHeight)
             allPlaceButtons.append(button)
-        }
-    }
-    
-    
-    
-    fileprivate func setupPlaceButtons(){
-        let buttonHeight: CGFloat = 135
-        let buttonWidth: CGFloat = 135
-//        let allButtons = [johnButton, hOCButton, courtButton, parkButton, oldHouseButton, bBallButton, plazaButton, belizeSignButton]
-        let allButtons = [hOCButton, courtButton, parkButton, oldHouseButton , bBallButton, plazaButton,belizeSignButton, johnButton,]
-        for button in allButtons{
-            view.addSubview(button)
-            let buttonLocation = places[button.tag].iconLocation
-            let buttonIconImg = places[button.tag].iconImg
-            button.setImage(UIImage(named: buttonIconImg)?.withRenderingMode(.alwaysOriginal), for: .normal)
-            let buttonName = places[button.tag].englishName
-            button.frame = CGRect(x: buttonLocation.x , y: buttonLocation.y, width: buttonWidth, height: buttonHeight)
-//                        button.backgroundColor = .red
-                       // let nameLabel = UILabel(frame: CGRect(x: buttonLocation.x, y: buttonLocation.y + buttonHeight, width: buttonWidth, height: 30))
-                       // nameLabel.text = " \(button.tag)"
-                      //  view.addSubview(nameLabel)
         }
     }
     
@@ -418,46 +315,6 @@ extension MainViewController{
         trailView.addSubview(directionView)
         directionView.frame = CGRect(x: 60, y: 750, width: 300, height: 300)
     }
-    
-    public func setupBelizeSignTrailView(){
-        
-        personCaptionLabel.textColor = .white
-        personCaptionLabel.font = UIFont.boldSystemFont(ofSize: 32)
-        personCaptionLabel.text = ClueConstant.personCaptionLabel.rawValue
-        personCaptionLabel.numberOfLines = 0
-        belizeSignTrailView.addSubview(personCaptionLabel)
-        personCaptionLabel.frame = CGRect(x: 200, y: 530, width: 500, height: 200)
-        belizeSignDirectionView.setValue(clue: ClueConstant.belizeCultureDirectionView.rawValue, arrow: "rightDirectionArrow")
-        personCaptionLabel.alpha = 1.0
-        belizeSignDirectionView.alpha = 0.0
-        belizeSignTrailView.addSubview(belizeSignDirectionView)
-        belizeSignDirectionView.frame = CGRect(x: 300, y: 30, width: 300, height: 300)
-        UIView.animate(withDuration: 3.0, animations: {
-            self.personCaptionLabel.alpha = 0.0
-        }) { (finished) in
-            if finished{
-                UIView.animate(withDuration: 2.0, animations: {
-                    self.belizeSignDirectionView.alpha = 1.0
-                })
-            }
-        }
-    }
-    
-    func setupFirstBelizeSignTrailView(){
-        currentPopView?.removeFromSuperview()
-        johnButton.removeFromSuperview()
-        belizeSignTrailView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        view.insertSubview(belizeSignTrailView, belowSubview: belizeSignButton)
-        belizeSignTrailView.fullAnchor(superView: view)
-        view.insertSubview(johnButton, belowSubview: belizeSignTrailView)
-        let buttonLocation = places[johnButton.tag].iconLocation
-        let buttonIconImg = places[johnButton.tag].iconImg
-        johnButton.setImage(UIImage(named: buttonIconImg)?.withRenderingMode(.alwaysOriginal), for: .normal)
-        let buttonHeight: CGFloat = 180
-        let buttonWidth: CGFloat = 180
-        johnButton.frame = CGRect(x: buttonLocation.x , y: buttonLocation.y, width: buttonWidth, height: buttonHeight)
-    }
-    
 }
 
 
@@ -515,16 +372,13 @@ extension MainViewController: UINavigationControllerDelegate{
 
 extension MainViewController: DetailViewControllerDelegate{
     func setupDummyTrailView() {
-        //just for 小英
-        self.setupFirstBelizeSignTrailView()
     }
     
     func removeTrailView() {
-        belizeSignTrailView.removeFromSuperview()
+        
     }
     
     func setupTrailView() {
-        self.setupBelizeSignTrailView()
     }
     
     

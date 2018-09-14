@@ -43,7 +43,8 @@ class WelcomeViewController: UIViewController {
     
     @objc func goToMainVC(){
         let mainVC = MainViewController()
-        mainVC.setupTrailView(belowSubview: mainVC.johnButton)
+        mainVC.setupAllPlacesButtons()
+        mainVC.setupTrailView(belowSubview: mainVC.allPlaceButtons[PlaceButtonTag.Johns.rawValue])
         let naviVC = UINavigationController(rootViewController: mainVC)
         naviVC.isNavigationBarHidden = true
         present(naviVC, animated: true){
