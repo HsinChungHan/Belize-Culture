@@ -49,6 +49,7 @@
 		C07F0F442121E79B000C590B /* DirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F0F432121E79B000C590B /* DirectionView.swift */; };
 		C07F0F462121F128000C590B /* OriginalPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = C07F0F452121F128000C590B /* OriginalPlaces.json */; };
 		C07F0F48212326F3000C590B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C07F0F47212326F2000C590B /* backgroundMusic.mp3 */; };
+		C083E6E0214F057C00EF8A54 /* BelizeThirteenCultures.json in Sources */ = {isa = PBXBuildFile; fileRef = C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */; };
 		C08A05832128D671008C9143 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C08A05822128D671008C9143 /* intro.mp4 */; };
 		C09A199E21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A199D21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift */; };
 		C09A19A02114192100C30E03 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A199F2114192100C30E03 /* StoryTableViewCell.swift */; };
@@ -119,6 +120,7 @@
 		C07F0F432121E79B000C590B /* DirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionView.swift; sourceTree = "<group>"; };
 		C07F0F452121F128000C590B /* OriginalPlaces.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OriginalPlaces.json; sourceTree = "<group>"; };
 		C07F0F47212326F2000C590B /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BelizeThirteenCultures.json; sourceTree = "<group>"; };
 		C08A05822128D671008C9143 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		C09A199D21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopInformationView+UICOllectionView.swift"; sourceTree = "<group>"; };
 		C09A199F2114192100C30E03 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				C004B11A2112506600B5B188 /* Place.swift */,
 				C07F0F452121F128000C590B /* OriginalPlaces.json */,
 				C07F0F39211BE69B000C590B /* BelizeCulture.json */,
+				C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				C004B13221139A6400B5B188 /* BannerContentCell.swift in Sources */,
 				C07F0F442121E79B000C590B /* DirectionView.swift in Sources */,
 				C04B94AA2110387D005B1CA4 /* BasicView.swift in Sources */,
+				C083E6E0214F057C00EF8A54 /* BelizeThirteenCultures.json in Sources */,
 				C09A19A42114ECD400C30E03 /* MapViewController.swift in Sources */,
 				C09A199E21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift in Sources */,
 				C09A1A012119031000C30E03 /* CustomNavigationAnimationController.swift in Sources */,
