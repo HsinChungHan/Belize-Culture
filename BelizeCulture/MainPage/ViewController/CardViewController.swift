@@ -175,7 +175,4 @@ extension CardViewController: LikeButtonDelegate{
             }
         }
     }
-    
-    
-    
 }

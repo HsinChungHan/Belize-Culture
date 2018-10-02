@@ -147,13 +147,15 @@ class VideoPlayer: UIView {
         //表示一秒
         let interval = CMTime(value: 1, timescale: 2)
         player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-            let seconds = progressTime.getSeconds()
+//            let seconds = progressTime.getSeconds()
+            let seconds = progressTime.seconds
             //seconds%60
             let secondsText = String(format:"%02d",Int(seconds.truncatingRemainder(dividingBy: 60)))
             let minutesText = String(format:"%02d", Int(seconds)/60)
             self.beginTimeLabel.text = "\(minutesText):\(secondsText)"
             guard let duration = self.player?.currentItem?.duration else {return}
-            let durationTime = duration.getSeconds()
+//            let durationTime = duration.getSeconds()
+            let durationTime = duration.seconds
 //            self.videoSlider.value = Float(seconds / durationTime)
             self.videoSlider.setValue(Float(seconds / durationTime), animated: true)
         })
@@ -169,7 +171,8 @@ class VideoPlayer: UIView {
             pausePlayButton.isHidden = false
             isPlaying = true
             guard let duration = player?.currentItem?.duration else{return}
-            let seconds = duration.getSeconds()
+//            let seconds = duration.getSeconds()
+            let seconds = duration.seconds
             let secondsText = Int(seconds.truncatingRemainder(dividingBy: 60))//seconds%60
 //            let minutesText = Int(seconds / 60)
             let minutesText2 = String(format:"%02d", Int(seconds)/60)

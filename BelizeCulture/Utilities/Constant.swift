@@ -46,12 +46,17 @@ enum PlaceIconConstant: String{
 enum PlaceButtonTag: Int{
     case HOC = 0
     case Court = 1
-    case Park = 2
-    case Eusey = 3
-    case BBall = 4
-    case Plaza = 5
-    case BelizeSign = 6
-    case Johns = 7
+    case HumanDevelopmentBuilding = 2
+    case CockburnLaneHouse = 3
+    case PaslowPlaza = 4
+    case Yarborough = 5
+    case BattlefieldPark = 6
+    case SwingBridge = 7
+    case MulePark = 8
+    case WesleyChurch = 9
+    case EuseyHouse = 10
+    case BelizeWelcomeSign = 11
+    case Johns = 12
 }
 
 
@@ -100,6 +105,13 @@ enum BelizeCultureJSONConstant: String{
     case isLiked = "isLiked"
     case iconLocationX = "iconLocationX"
     case iconLocationY = "iconLocationY"
+    case englishStoryFirst = "englishStoryFirst"
+    case englishStorySecond = "englishStorySecond"
+    case englishStoryThird = "englishStoryThird"
+    case mandarinStoryFirst = "mandarinStoryFirst"
+    case mandarinStorySecond = "mandarinStorySecond"
+    case mandarinStoryThird = "mandarinStoryThird"
+    
 }
 
 

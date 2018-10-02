@@ -56,7 +56,7 @@ class Place{
 //           ]
 //    }
     
-    let englishName: String, mandarinName: String, address: String, coordinate: (latitude: CGFloat, longitude: CGFloat), type: String, phone: String, openingTime: String, imgs: [String], englishStory: String, mandarinStory: String, mapImg: String,iconImg: String, website: String, iconLocation: (x: CGFloat, y: CGFloat)
+    let englishName: String, mandarinName: String, address: String, coordinate: (latitude: CGFloat, longitude: CGFloat), type: String, phone: String, openingTime: String, imgs: [String], englishStory: String, englishStoryFirst: String, englishStorySecond: String, englishStoryThird: String, mandarinStory: String, mandarinStoryFirst: String, mandarinStorySecond: String, mandarinStoryThird: String, mapImg: String,iconImg: String, website: String, iconLocation: (x: CGFloat, y: CGFloat)
     
     var isLiked: Bool
     
@@ -70,7 +70,13 @@ class Place{
         self.openingTime = dict[BelizeCultureJSONConstant.openingTime.rawValue] as? String ?? ""
         self.imgs = dict[BelizeCultureJSONConstant.imgs.rawValue] as? [String] ?? [String]()
         self.englishStory = dict[BelizeCultureJSONConstant.englishStory.rawValue] as? String ?? ""
+        self.englishStoryFirst = dict[BelizeCultureJSONConstant.englishStoryFirst.rawValue] as? String ?? ""
+        self.englishStorySecond = dict[BelizeCultureJSONConstant.englishStorySecond.rawValue] as? String ?? ""
+        self.englishStoryThird = dict[BelizeCultureJSONConstant.englishStoryThird.rawValue] as? String ?? ""
         self.mandarinStory = dict[BelizeCultureJSONConstant.mandarinStory.rawValue] as? String ?? ""
+        self.mandarinStoryFirst = dict[BelizeCultureJSONConstant.mandarinStoryFirst.rawValue] as? String ?? ""
+        self.mandarinStorySecond = dict[BelizeCultureJSONConstant.mandarinStorySecond.rawValue] as? String ?? ""
+        self.mandarinStoryThird = dict[BelizeCultureJSONConstant.mandarinStoryThird.rawValue] as? String ?? ""
         self.mapImg = dict[BelizeCultureJSONConstant.mapImg.rawValue] as? String ?? ""
         self.iconImg = dict[BelizeCultureJSONConstant.iconImg.rawValue] as? String ?? ""
         self.website = dict[BelizeCultureJSONConstant.website.rawValue] as? String ?? ""
@@ -78,13 +84,14 @@ class Place{
         self.iconLocation.y = dict[BelizeCultureJSONConstant.iconLocationY.rawValue] as? CGFloat ?? 0
         self.isLiked = dict[BelizeCultureJSONConstant.isLiked.rawValue] as? Bool ?? false
         self.phone = dict[BelizeCultureJSONConstant.phone.rawValue] as? String ?? ""
+        
     }
     
     
     
     static func getPlaces() -> [Place]{
         var places = [Place]()
-        parseJSON(fileName: "BelizeCulture") { (arr) in
+        parseJSON(fileName: "AllPlaces") { (arr) in
             for dict in arr{
                 let place = Place(dict: dict as! [String : Any])
                 places.append(place)

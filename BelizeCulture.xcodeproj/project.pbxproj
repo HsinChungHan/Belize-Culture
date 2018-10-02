@@ -47,10 +47,8 @@
 		C07F0F40211CE207000C590B /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F0F3F211CE207000C590B /* WebViewViewController.swift */; };
 		C07F0F42211D26C1000C590B /* WebViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F0F41211D26C1000C590B /* WebViewTableViewCell.swift */; };
 		C07F0F442121E79B000C590B /* DirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F0F432121E79B000C590B /* DirectionView.swift */; };
-		C07F0F462121F128000C590B /* OriginalPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = C07F0F452121F128000C590B /* OriginalPlaces.json */; };
+		C07F0F462121F128000C590B /* AllPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = C07F0F452121F128000C590B /* AllPlaces.json */; };
 		C07F0F48212326F3000C590B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C07F0F47212326F2000C590B /* backgroundMusic.mp3 */; };
-		C083E6E0214F057C00EF8A54 /* BelizeThirteenCultures.json in Sources */ = {isa = PBXBuildFile; fileRef = C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */; };
-		C08A05832128D671008C9143 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C08A05822128D671008C9143 /* intro.mp4 */; };
 		C09A199E21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A199D21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift */; };
 		C09A19A02114192100C30E03 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A199F2114192100C30E03 /* StoryTableViewCell.swift */; };
 		C09A19A22114360400C30E03 /* TableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A19A12114360400C30E03 /* TableBackgroundView.swift */; };
@@ -64,6 +62,8 @@
 		C09A19FB2118FD7C00C30E03 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A19FA2118FD7C00C30E03 /* CustomInteractionController.swift */; };
 		C09A19FF2119018300C30E03 /* CustomDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A19FE2119018300C30E03 /* CustomDismissAnimationController.swift */; };
 		C09A1A012119031000C30E03 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A1A002119031000C30E03 /* CustomNavigationAnimationController.swift */; };
+		C0C511A42159E11800AB6319 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C0C511A32159E11800AB6319 /* intro.mp4 */; };
+		C0C511A9216087B000AB6319 /* ICDFIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C511A8216087B000AB6319 /* ICDFIntroductionViewController.swift */; };
 		FD0945780176B4B2E25012B1 /* Pods_BelizeCulture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF5DDBF97597248329A4A86 /* Pods_BelizeCulture.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,10 +118,8 @@
 		C07F0F3F211CE207000C590B /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		C07F0F41211D26C1000C590B /* WebViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTableViewCell.swift; sourceTree = "<group>"; };
 		C07F0F432121E79B000C590B /* DirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionView.swift; sourceTree = "<group>"; };
-		C07F0F452121F128000C590B /* OriginalPlaces.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OriginalPlaces.json; sourceTree = "<group>"; };
+		C07F0F452121F128000C590B /* AllPlaces.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllPlaces.json; sourceTree = "<group>"; };
 		C07F0F47212326F2000C590B /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
-		C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BelizeThirteenCultures.json; sourceTree = "<group>"; };
-		C08A05822128D671008C9143 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		C09A199D21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopInformationView+UICOllectionView.swift"; sourceTree = "<group>"; };
 		C09A199F2114192100C30E03 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		C09A19A12114360400C30E03 /* TableBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBackgroundView.swift; sourceTree = "<group>"; };
@@ -134,6 +132,8 @@
 		C09A19FA2118FD7C00C30E03 /* CustomInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
 		C09A19FE2119018300C30E03 /* CustomDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimationController.swift; sourceTree = "<group>"; };
 		C09A1A002119031000C30E03 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		C0C511A32159E11800AB6319 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
+		C0C511A8216087B000AB6319 /* ICDFIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICDFIntroductionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				C004B11A2112506600B5B188 /* Place.swift */,
-				C07F0F452121F128000C590B /* OriginalPlaces.json */,
+				C07F0F452121F128000C590B /* AllPlaces.json */,
 				C07F0F39211BE69B000C590B /* BelizeCulture.json */,
-				C083E6DF214F057C00EF8A54 /* BelizeThirteenCultures.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,7 +203,6 @@
 				C06EE5072110280800D82351 /* MainViewController.swift */,
 				C07F0F432121E79B000C590B /* DirectionView.swift */,
 				C09A19A62116207500C30E03 /* CardViewController.swift */,
-				C09A19A82116235B00C30E03 /* CardCollectionViewCell.swift */,
 				C09A19D22117F5FB00C30E03 /* AnimatedLayer.swift */,
 				C09A19F62118DE3600C30E03 /* FBStreamingView.swift */,
 				C07F0F33211BA77A000C590B /* ListView.swift */,
@@ -237,6 +235,7 @@
 				C04B949D21102F14005B1CA4 /* Basic_UI */,
 				C04B94AB21103A8A005B1CA4 /* UIView+BezierPaths.swift */,
 				C03CE07A21102D9C00376C18 /* UIColor_Extension.swift */,
+				C004B12F2113983300B5B188 /* Constant.swift */,
 				C06EE50921102C9300D82351 /* String_Extension.swift */,
 				C04B948421102EBB005B1CA4 /* SlideDownTransitionAnimator.swift */,
 				C04B948721102EBC005B1CA4 /* SlideRightTransitionAnimator.swift */,
@@ -247,7 +246,6 @@
 				C06EE50B21102C9300D82351 /* TimerExtension.swift */,
 				C03CE07821102D9C00376C18 /* UIApplictionExtension.swift */,
 				C03CE07621102D9C00376C18 /* UIViewExtension.swift */,
-				C004B12F2113983300B5B188 /* Constant.swift */,
 				C07F0EFA211A4A42000C590B /* UIIMage_GIF_Extension.swift */,
 				C07F0F0E211AB5BD000C590B /* VideoLauncher.swift */,
 			);
@@ -286,10 +284,11 @@
 		C06EE4F42110279F00D82351 /* BelizeCulture */ = {
 			isa = PBXGroup;
 			children = (
+				C0C511A72160878200AB6319 /* ICDFIntroductionPage */,
 				C07F0F01211A52D1000C590B /* SupportingFile */,
 				C06EE4F52110279F00D82351 /* AppDelegate.swift */,
-				C07F0F35211BBB17000C590B /* MainTabBarController.swift */,
-				C07F0EFF211A4EE6000C590B /* WelcomeViewController.swift */,
+				C0C511A52160876200AB6319 /* MainTabBar */,
+				C0C511A62160877200AB6319 /* WelcomePage */,
 				C004B11E21134C0B00B5B188 /* MainPage */,
 				C004B11F21134C1C00B5B188 /* Detail Page */,
 				C004B12021134C3500B5B188 /* Model */,
@@ -313,7 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				C07F0F47212326F2000C590B /* backgroundMusic.mp3 */,
-				C08A05822128D671008C9143 /* intro.mp4 */,
+				C09A19A82116235B00C30E03 /* CardCollectionViewCell.swift */,
+				C0C511A32159E11800AB6319 /* intro.mp4 */,
 				C07F0F02211A52E5000C590B /* welcome.json */,
 				C07F0F08211A5673000C590B /* whale.json */,
 				C07F0F04211A5303000C590B /* images */,
@@ -330,6 +330,30 @@
 				C004B13121139A6400B5B188 /* BannerContentCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C0C511A52160876200AB6319 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C07F0F35211BBB17000C590B /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		C0C511A62160877200AB6319 /* WelcomePage */ = {
+			isa = PBXGroup;
+			children = (
+				C07F0EFF211A4EE6000C590B /* WelcomeViewController.swift */,
+			);
+			path = WelcomePage;
+			sourceTree = "<group>";
+		};
+		C0C511A72160878200AB6319 /* ICDFIntroductionPage */ = {
+			isa = PBXGroup;
+			children = (
+				C0C511A8216087B000AB6319 /* ICDFIntroductionViewController.swift */,
+			);
+			path = ICDFIntroductionPage;
 			sourceTree = "<group>";
 		};
 		F6820297FA65DFDC9795108E /* Frameworks */ = {
@@ -402,8 +426,8 @@
 			files = (
 				C07F0F05211A5303000C590B /* images in Resources */,
 				C07F0F3A211BE69B000C590B /* BelizeCulture.json in Resources */,
-				C08A05832128D671008C9143 /* intro.mp4 in Resources */,
-				C07F0F462121F128000C590B /* OriginalPlaces.json in Resources */,
+				C0C511A42159E11800AB6319 /* intro.mp4 in Resources */,
+				C07F0F462121F128000C590B /* AllPlaces.json in Resources */,
 				C07F0F48212326F3000C590B /* backgroundMusic.mp3 in Resources */,
 				C06EE500211027A400D82351 /* LaunchScreen.storyboard in Resources */,
 				C07F0F09211A5673000C590B /* whale.json in Resources */,
@@ -491,13 +515,13 @@
 				C09A19A02114192100C30E03 /* StoryTableViewCell.swift in Sources */,
 				C06EE4F62110279F00D82351 /* AppDelegate.swift in Sources */,
 				C004B1302113983300B5B188 /* Constant.swift in Sources */,
+				C0C511A9216087B000AB6319 /* ICDFIntroductionViewController.swift in Sources */,
 				C09A19FF2119018300C30E03 /* CustomDismissAnimationController.swift in Sources */,
 				C03CE06F21102D7600376C18 /* CAGradientLayer_Extension.swift in Sources */,
 				C06EE5082110280800D82351 /* MainViewController.swift in Sources */,
 				C004B13221139A6400B5B188 /* BannerContentCell.swift in Sources */,
 				C07F0F442121E79B000C590B /* DirectionView.swift in Sources */,
 				C04B94AA2110387D005B1CA4 /* BasicView.swift in Sources */,
-				C083E6E0214F057C00EF8A54 /* BelizeThirteenCultures.json in Sources */,
 				C09A19A42114ECD400C30E03 /* MapViewController.swift in Sources */,
 				C09A199E21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift in Sources */,
 				C09A1A012119031000C30E03 /* CustomNavigationAnimationController.swift in Sources */,

@@ -177,7 +177,8 @@ extension PopInformationView{
             self?.showImage(isNext: true, indexPath: currentIndexPath)
         })
         guard let timer = timer else {return}
-        RunLoop.current.add(timer, forMode: .commonModes)
+//        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: .common)
     }
     
     func removeTimer() {

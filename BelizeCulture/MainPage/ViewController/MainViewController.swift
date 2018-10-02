@@ -14,6 +14,7 @@ var shouldBelizeSignTrailAppear = false
 
 class MainViewController: UIViewController {
     
+    
     let places = Place.getPlaces()
     var allPlaceButtons = [UIButton]()
     
@@ -58,12 +59,10 @@ class MainViewController: UIViewController {
             isSlided = false
             listBeginningHeightAnchor?.isActive = true
             listAfterHeightAnchor?.isActive = false
-            
         }else{
             isSlided = true
             listBeginningHeightAnchor?.isActive = false
             listAfterHeightAnchor?.isActive = true
-            
         }
         UIView.animate(withDuration: 1) {
             self.view.layoutIfNeeded()
@@ -145,20 +144,20 @@ class MainViewController: UIViewController {
             }
         }
         
-        if sender.tag == PlaceButtonTag.Johns.rawValue || sender.tag == PlaceButtonTag.HOC.rawValue || sender.tag == PlaceButtonTag.Eusey.rawValue {
+        if sender.tag == PlaceButtonTag.Johns.rawValue || sender.tag == PlaceButtonTag.HOC.rawValue || sender.tag == PlaceButtonTag.EuseyHouse.rawValue || sender.tag == PlaceButtonTag.CockburnLaneHouse.rawValue {
             self.personImgView.moveAnimation(endView: sender, duration: 2.0) {
                 self.setupPopView(buttonTag: sender.tag){
                     dummyView.removeFromSuperview()
                 }
             }
-        }else if sender.tag == PlaceButtonTag.Court.rawValue || sender.tag == PlaceButtonTag.Park.rawValue || sender.tag == PlaceButtonTag.Plaza.rawValue || sender.tag == PlaceButtonTag.BelizeSign.rawValue{
+        }else if sender.tag == PlaceButtonTag.Court.rawValue || sender.tag == PlaceButtonTag.MulePark.rawValue || sender.tag == PlaceButtonTag.PaslowPlaza.rawValue || sender.tag == PlaceButtonTag.BelizeWelcomeSign.rawValue || sender.tag == PlaceButtonTag.BattlefieldPark.rawValue{
             self.personImgView.movAnimation(endView: sender, duration: 2.0, offsetX: -30, offSetY: sender.frame.height - 80) {
                 self.setupPopView(buttonTag: sender.tag){
                     dummyView.removeFromSuperview()
                 }
             }
-        }else if sender.tag == PlaceButtonTag.BBall.rawValue{
-            self.personImgView.movAnimation(endView: sender, duration: 2.0, offsetX: sender.frame.width - 60, offSetY: 0) {
+        }else if sender.tag == PlaceButtonTag.Yarborough.rawValue || sender.tag == PlaceButtonTag.WesleyChurch.rawValue || sender.tag == PlaceButtonTag.SwingBridge.rawValue{
+            self.personImgView.movAnimation(endView: sender, duration: 2.0, offsetX: sender.frame.width - 60, offSetY: 30) {
                 self.setupPopView(buttonTag: sender.tag){
                     dummyView.removeFromSuperview()
                 }
@@ -201,8 +200,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        setupGoToCardButton()
+//        setupViews()
+//        setupGoToCardButton()
         navigationController?.delegate = self
     }
 }
@@ -212,9 +211,14 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController{
-    fileprivate func setupViews(){
+    public func setupViews(){
         setupMap()
+        setupAllPlacesButtons()
         setupPersonImgView()
+        setupGoToCardButton()
+        
+        setupListButton()
+        setupListView()
 //        setupWhaleAnimationView()
     }
     
@@ -242,6 +246,11 @@ extension MainViewController{
             let buttonHeight: CGFloat = 135
             let buttonWidth: CGFloat = 135
             button.frame = CGRect(x: buttonLocation.x , y: buttonLocation.y, width: buttonWidth, height: buttonHeight)
+//            let nameLabel = UILabel()
+//            nameLabel.text = buttonName
+//            view.addSubview(nameLabel)
+//            nameLabel.frame = CGRect(x: buttonLocation.x , y: buttonLocation.y + 140, width: buttonWidth, height: 20)
+//            nameLabel.textColor = .white
             allPlaceButtons.append(button)
         }
     }
@@ -292,13 +301,13 @@ extension MainViewController{
         self.view.addSubview(currentPopView)
         currentPopView.goToDetailVCDelegate = self
         
-        if buttonTag == PlaceButtonTag.Johns.rawValue || buttonTag == PlaceButtonTag.HOC.rawValue || buttonTag == PlaceButtonTag.Eusey.rawValue || buttonTag == PlaceButtonTag.BBall.rawValue{
+        if buttonTag == PlaceButtonTag.Johns.rawValue || buttonTag == PlaceButtonTag.HOC.rawValue || buttonTag == PlaceButtonTag.EuseyHouse.rawValue || buttonTag == PlaceButtonTag.CockburnLaneHouse.rawValue || buttonTag == PlaceButtonTag.Yarborough.rawValue || buttonTag == PlaceButtonTag.WesleyChurch.rawValue{
             currentPopView.anchor(top: nil, bottom: self.personImgView.topAnchor, left: nil, right: nil, topPadding: 0, bottomPadding: 10, leftPadding: 0, rightPadding: 0, width: WidthConstant.popView.rawValue, height: HeightConstant.popView.rawValue)
             currentPopView.centerXAnchor.constraint(equalTo: self.personImgView.centerXAnchor, constant: 20).isActive = true
             print("currentPopView: ", currentPopView.bounds)
             currentPopView.layoutIfNeeded()
             currentPopView.applyArrowDialogAppearanceWithOrientation(frame: currentPopView.bounds, arrowOrientation: .down)
-        } else if buttonTag == PlaceButtonTag.Court.rawValue || buttonTag == PlaceButtonTag.Park.rawValue || buttonTag == PlaceButtonTag.Plaza.rawValue || buttonTag == PlaceButtonTag.BelizeSign.rawValue{
+        } else if buttonTag == PlaceButtonTag.Court.rawValue || buttonTag == PlaceButtonTag.MulePark.rawValue || buttonTag == PlaceButtonTag.PaslowPlaza.rawValue || buttonTag == PlaceButtonTag.BelizeWelcomeSign.rawValue || buttonTag == PlaceButtonTag.SwingBridge.rawValue || buttonTag == PlaceButtonTag.BattlefieldPark.rawValue{
             currentPopView.anchor(top: self.personImgView.bottomAnchor, bottom: nil, left: nil, right: nil, topPadding: 10, bottomPadding: 0, leftPadding: 0, rightPadding: 0, width: WidthConstant.popView.rawValue, height: HeightConstant.popView.rawValue)
             currentPopView.centerXAnchor.constraint(equalTo: self.personImgView.centerXAnchor, constant: 20).isActive = true
             currentPopView.layoutIfNeeded()
