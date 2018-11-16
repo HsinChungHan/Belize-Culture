@@ -69,8 +69,18 @@ extension UIColor{
     static let heartRed = UIColor.rgb(red: 216, green: 74, blue: 32)
     
     
+    //for ICDF introduction page
+    static let introductionTextColor = UIColor.rgb(red: 72, green: 54, blue: 31)
     
+    static let appleGreenBackgroundColor = UIColor.rgb(red: 141, green: 199, blue: 63)
     
+    static let deepGreenBackgroundColor = UIColor.rgb(red: 0, green: 166, blue: 80)
+    
+    static let blueBackgroundColor = UIColor.rgb(red: 0, green: 182, blue: 240)
+    
+    static let shadowColor = UIColor.rgb(red: 85, green: 85, blue: 168)
+
+    // ---------------------------------------------------------------------------------
     
     
     

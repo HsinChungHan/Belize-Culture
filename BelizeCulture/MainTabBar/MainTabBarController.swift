@@ -22,15 +22,20 @@ class MainTabBarController: UITabBarController {
         let mainVC = MainViewController()
         mainVC.setupViews()
         mainVC.setupTrailView(belowSubview: mainVC.allPlaceButtons[PlaceButtonTag.Johns.rawValue])
-        let mainNaviVC = templateNaviViewController(rootViewController: mainVC, unselectedImage: "traffic-lights", selectedImage: "traffic-lights", title: "Search")
+        let mainNaviVC = templateNaviViewController(rootViewController: mainVC, unselectedImage: "traffic-lights", selectedImage: "traffic-lights", title: "Main Page")
         
         //search tab
         let ICDFIntroductionVC = ICDFIntroductionViewController()
-        let ICDFIntroductionNaviVC = templateNaviViewController(rootViewController: ICDFIntroductionVC, unselectedImage: "traffic-lights", selectedImage: "traffic-lights", title: "ICDF")
+        let ICDFIntroductionNaviVC = templateNaviViewController(rootViewController: ICDFIntroductionVC, unselectedImage: "traffic-lights", selectedImage: "traffic-lights", title: "ICDF Introduction")
+        
+        let cultureIntroductionVC = CultureIntroductionViewController()
+        let cultureIntroductionNaviVC = templateNaviViewController(rootViewController: cultureIntroductionVC, unselectedImage: "traffic-lights", selectedImage: "traffic-lights", title: "Culture Project")
+        
         
         viewControllers = [
                            mainNaviVC,
                            ICDFIntroductionNaviVC,
+                           cultureIntroductionNaviVC,
                            ]
         
         //因為icom預設在tab bar中，是中間偏上，所以我們要用程式碼的方式調整位置

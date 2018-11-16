@@ -18,6 +18,11 @@
 		C004B1302113983300B5B188 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C004B12F2113983300B5B188 /* Constant.swift */; };
 		C004B13221139A6400B5B188 /* BannerContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C004B13121139A6400B5B188 /* BannerContentCell.swift */; };
 		C004B13321139A7C00B5B188 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EE50F21102C9400D82351 /* BasicCell.swift */; };
+		C0124C8F2169B5DB009CD13C /* ICDFIntrodutionParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0124C8E2169B5DB009CD13C /* ICDFIntrodutionParagraph.swift */; };
+		C01F238D2168DF4B00246597 /* ParagraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F238C2168DF4B00246597 /* ParagraphCell.swift */; };
+		C01F23912168E3DB00246597 /* ParaghImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F23902168E3DB00246597 /* ParaghImageView.swift */; };
+		C01F23932168E58D00246597 /* LowerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F23922168E58D00246597 /* LowerBackgroundView.swift */; };
+		C0275ED0216DBCCA00D265BB /* FinalParagraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0275ECF216DBCCA00D265BB /* FinalParagraphCell.swift */; };
 		C03CE06F21102D7600376C18 /* CAGradientLayer_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03CE06E21102D7600376C18 /* CAGradientLayer_Extension.swift */; };
 		C0474F8321192E0C008BD9A7 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0474F8221192E0C008BD9A7 /* CustomPresentAnimationController.swift */; };
 		C04B949E21102F20005B1CA4 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EE50E21102C9400D82351 /* UIStackViewExtension.swift */; };
@@ -29,6 +34,7 @@
 		C04B94AF21103F7D005B1CA4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B94AE21103F7D005B1CA4 /* DetailViewController.swift */; };
 		C04B94B021103FA3005B1CA4 /* SlideDownTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B948421102EBB005B1CA4 /* SlideDownTransitionAnimator.swift */; };
 		C04B94B121103FA3005B1CA4 /* SlideRightTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B948721102EBC005B1CA4 /* SlideRightTransitionAnimator.swift */; };
+		C0587F722165D42F001B8393 /* CultureIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0587F712165D42F001B8393 /* CultureIntroductionViewController.swift */; };
 		C06EE4F62110279F00D82351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EE4F52110279F00D82351 /* AppDelegate.swift */; };
 		C06EE4FD211027A400D82351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EE4FC211027A400D82351 /* Assets.xcassets */; };
 		C06EE500211027A400D82351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EE4FE211027A400D82351 /* LaunchScreen.storyboard */; };
@@ -81,6 +87,11 @@
 		C004B12D21138A7500B5B188 /* MapInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInformationTableViewCell.swift; sourceTree = "<group>"; };
 		C004B12F2113983300B5B188 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C004B13121139A6400B5B188 /* BannerContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerContentCell.swift; sourceTree = "<group>"; };
+		C0124C8E2169B5DB009CD13C /* ICDFIntrodutionParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICDFIntrodutionParagraph.swift; sourceTree = "<group>"; };
+		C01F238C2168DF4B00246597 /* ParagraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphCell.swift; sourceTree = "<group>"; };
+		C01F23902168E3DB00246597 /* ParaghImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaghImageView.swift; sourceTree = "<group>"; };
+		C01F23922168E58D00246597 /* LowerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerBackgroundView.swift; sourceTree = "<group>"; };
+		C0275ECF216DBCCA00D265BB /* FinalParagraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalParagraphCell.swift; sourceTree = "<group>"; };
 		C03CE06E21102D7600376C18 /* CAGradientLayer_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAGradientLayer_Extension.swift; sourceTree = "<group>"; };
 		C03CE07421102D9B00376C18 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C03CE07621102D9C00376C18 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -93,6 +104,7 @@
 		C04B94A82110386D005B1CA4 /* PopInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopInformationView.swift; sourceTree = "<group>"; };
 		C04B94AB21103A8A005B1CA4 /* UIView+BezierPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BezierPaths.swift"; sourceTree = "<group>"; };
 		C04B94AE21103F7D005B1CA4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C0587F712165D42F001B8393 /* CultureIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureIntroductionViewController.swift; sourceTree = "<group>"; };
 		C06EE4F22110279F00D82351 /* BelizeCulture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelizeCulture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EE4F52110279F00D82351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06EE4FC211027A400D82351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,7 +192,6 @@
 				C03CE07421102D9B00376C18 /* UIViewControllerExtension.swift */,
 				C09A199F2114192100C30E03 /* StoryTableViewCell.swift */,
 				C07F0F10211B6FD2000C590B /* StoryInformationView.swift */,
-				C06EE50D21102C9400D82351 /* BasicView.swift */,
 				C004B12B211368BA00B5B188 /* InformationView.swift */,
 				C03CE06E21102D7600376C18 /* CAGradientLayer_Extension.swift */,
 			);
@@ -255,12 +266,21 @@
 		C04B949D21102F14005B1CA4 /* Basic_UI */ = {
 			isa = PBXGroup;
 			children = (
+				C06EE50D21102C9400D82351 /* BasicView.swift */,
 				C004B0F42111571100B5B188 /* PathView.swift */,
 				C09A19F82118F7F900C30E03 /* UIImage_Extension.swift */,
 				C06EE50F21102C9400D82351 /* BasicCell.swift */,
 				C004B12121134C7500B5B188 /* BasicTableViewCell.swift */,
 			);
 			path = Basic_UI;
+			sourceTree = "<group>";
+		};
+		C0587F702165D404001B8393 /* CultureIntroductionPage */ = {
+			isa = PBXGroup;
+			children = (
+				C0587F712165D42F001B8393 /* CultureIntroductionViewController.swift */,
+			);
+			path = CultureIntroductionPage;
 			sourceTree = "<group>";
 		};
 		C06EE4E92110279F00D82351 = {
@@ -284,6 +304,7 @@
 		C06EE4F42110279F00D82351 /* BelizeCulture */ = {
 			isa = PBXGroup;
 			children = (
+				C0587F702165D404001B8393 /* CultureIntroductionPage */,
 				C0C511A72160878200AB6319 /* ICDFIntroductionPage */,
 				C07F0F01211A52D1000C590B /* SupportingFile */,
 				C06EE4F52110279F00D82351 /* AppDelegate.swift */,
@@ -352,6 +373,11 @@
 			isa = PBXGroup;
 			children = (
 				C0C511A8216087B000AB6319 /* ICDFIntroductionViewController.swift */,
+				C01F238C2168DF4B00246597 /* ParagraphCell.swift */,
+				C0275ECF216DBCCA00D265BB /* FinalParagraphCell.swift */,
+				C01F23902168E3DB00246597 /* ParaghImageView.swift */,
+				C01F23922168E58D00246597 /* LowerBackgroundView.swift */,
+				C0124C8E2169B5DB009CD13C /* ICDFIntrodutionParagraph.swift */,
 			);
 			path = ICDFIntroductionPage;
 			sourceTree = "<group>";
@@ -483,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01F23912168E3DB00246597 /* ParaghImageView.swift in Sources */,
 				C0474F8321192E0C008BD9A7 /* CustomPresentAnimationController.swift in Sources */,
 				C09A19A22114360400C30E03 /* TableBackgroundView.swift in Sources */,
 				C004B13321139A7C00B5B188 /* BasicCell.swift in Sources */,
@@ -503,6 +530,7 @@
 				C09A19F72118DE3600C30E03 /* FBStreamingView.swift in Sources */,
 				C09A19FB2118FD7C00C30E03 /* CustomInteractionController.swift in Sources */,
 				C07F0F36211BBB17000C590B /* MainTabBarController.swift in Sources */,
+				C0275ED0216DBCCA00D265BB /* FinalParagraphCell.swift in Sources */,
 				C004B0F92112192E00B5B188 /* SlideLeftTransitionAnimator.swift in Sources */,
 				C09A19A52114EE3A00C30E03 /* UIViewControllerExtension.swift in Sources */,
 				C09A19D32117F5FB00C30E03 /* AnimatedLayer.swift in Sources */,
@@ -513,16 +541,20 @@
 				C07F0F40211CE207000C590B /* WebViewViewController.swift in Sources */,
 				C04B94A92110386D005B1CA4 /* PopInformationView.swift in Sources */,
 				C09A19A02114192100C30E03 /* StoryTableViewCell.swift in Sources */,
+				C01F23932168E58D00246597 /* LowerBackgroundView.swift in Sources */,
 				C06EE4F62110279F00D82351 /* AppDelegate.swift in Sources */,
 				C004B1302113983300B5B188 /* Constant.swift in Sources */,
 				C0C511A9216087B000AB6319 /* ICDFIntroductionViewController.swift in Sources */,
+				C0124C8F2169B5DB009CD13C /* ICDFIntrodutionParagraph.swift in Sources */,
 				C09A19FF2119018300C30E03 /* CustomDismissAnimationController.swift in Sources */,
 				C03CE06F21102D7600376C18 /* CAGradientLayer_Extension.swift in Sources */,
 				C06EE5082110280800D82351 /* MainViewController.swift in Sources */,
 				C004B13221139A6400B5B188 /* BannerContentCell.swift in Sources */,
 				C07F0F442121E79B000C590B /* DirectionView.swift in Sources */,
 				C04B94AA2110387D005B1CA4 /* BasicView.swift in Sources */,
+				C0587F722165D42F001B8393 /* CultureIntroductionViewController.swift in Sources */,
 				C09A19A42114ECD400C30E03 /* MapViewController.swift in Sources */,
+				C01F238D2168DF4B00246597 /* ParagraphCell.swift in Sources */,
 				C09A199E21139C6F00C30E03 /* PopInformationView+UICOllectionView.swift in Sources */,
 				C09A1A012119031000C30E03 /* CustomNavigationAnimationController.swift in Sources */,
 				C004B12C211368BA00B5B188 /* InformationView.swift in Sources */,

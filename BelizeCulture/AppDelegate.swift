@@ -25,8 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let naviVC = UINavigationController(rootViewController: welcomeVC)
         naviVC.isNavigationBarHidden = true
         let tabBarVC = MainTabBarController()
+        let ICDFIntroductionPage = ICDFIntroductionViewController()
         window?.rootViewController = naviVC
-        
+//        window?.rootViewController = ICDFIntroductionPage
+
         Thread.sleep(forTimeInterval: 1.5)
 
         return true

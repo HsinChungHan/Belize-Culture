@@ -204,6 +204,8 @@ class MainViewController: UIViewController {
 //        setupGoToCardButton()
         navigationController?.delegate = self
     }
+    
+  
 }
 
 
@@ -222,6 +224,14 @@ extension MainViewController{
 //        setupWhaleAnimationView()
     }
     
+    public func setupTrailView(belowSubview: UIButton){
+        trailView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.insertSubview(trailView, belowSubview: belowSubview)
+        trailView.fullAnchor(superView: view)
+        trailView.addSubview(directionView)
+        directionView.frame = CGRect(x: 60, y: 750, width: 300, height: 300)
+    }
+    
     fileprivate func setupMap() {
         view.addSubview(mapImgView)
         mapImgView.fullAnchor(superView: view)
@@ -232,7 +242,7 @@ extension MainViewController{
         personImgView.frame = CGRect(x: UIScreen.main.bounds.width - 100, y: 40, width: 80, height: 80)
     }
     
-    public func setupAllPlacesButtons(){
+    fileprivate func setupAllPlacesButtons(){
         for index in 0 ..< places.count{
             let button = UIButton(type: .system)
             button.tag = index
@@ -317,13 +327,7 @@ extension MainViewController{
         completion()
     }
     
-    public func setupTrailView(belowSubview: UIButton){
-        trailView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        view.insertSubview(trailView, belowSubview: belowSubview)
-        trailView.fullAnchor(superView: view)
-        trailView.addSubview(directionView)
-        directionView.frame = CGRect(x: 60, y: 750, width: 300, height: 300)
-    }
+   
 }
 
 
@@ -389,7 +393,5 @@ extension MainViewController: DetailViewControllerDelegate{
     
     func setupTrailView() {
     }
-    
-    
     
 }
